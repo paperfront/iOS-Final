@@ -40,8 +40,9 @@ class FeedVC: UIViewController  {
     func setupArrayOfSnaps() {
         arrayOfSnaps = []
         /* PART 2B START */
-        
-        
+        FirebaseAPIClient.getSnaps(completion: {snaps in
+            self.arrayOfSnaps = snaps
+            })
         /* PART 2B FINISH */
         tableView.reloadData()
     }
@@ -65,7 +66,14 @@ class FeedVC: UIViewController  {
     
     
     /* PART 3C START (Hint: Define a function, that's already used in part 3 code) */
-    
+    func toggleColor() {
+        if self.view.backgroundColor == UIColor.yellow{
+            self.view.backgroundColor = UIColor.blue
+        }
+        else{
+            self.view.backgroundColor = UIColor.yellow
+        }
+    }
     /* PART 3C FINISH */
     
     

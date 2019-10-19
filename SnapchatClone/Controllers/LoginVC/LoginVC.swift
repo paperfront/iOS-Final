@@ -10,7 +10,9 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class LoginVC: UIViewController  {
+class LoginVC: UIViewController, VCDelegate  {
+    
+    
     var logoImageView: UIImageView!
     var loginRegisterSegControl: UISegmentedControl!
     
@@ -31,6 +33,7 @@ class LoginVC: UIViewController  {
         setupSegControl()
         setupLoginRegisterButton()
         setupTextFields()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -160,7 +163,14 @@ class LoginVC: UIViewController  {
     }
     
     /* PART 3B START (Hint: Define a function, that's used elsewhere in PART 3 CODE) */
-    
+    func toggleColor() {
+        if self.view.backgroundColor == UIColor.yellow{
+            self.view.backgroundColor = UIColor.purple
+        }
+        else{
+            self.view.backgroundColor = UIColor.yellow
+        }
+    }
     /* PART 3B FINISH */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

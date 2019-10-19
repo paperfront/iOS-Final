@@ -52,7 +52,7 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func changeColors(_ vcDel : VCDelegate) {
-        // vcDel.toggleColor() // PART 3 CODE
+        vcDel.toggleColor() // PART 3 CODE
     }
  
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
